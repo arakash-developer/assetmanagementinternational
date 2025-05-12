@@ -1,34 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import RootLayout from "./component/RootLayout";
 import './App.css'
+// React Router dom........
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      {/* <Route index path="/" element={<Register />}></Route>
+      <Route index path="/" element={<Register />}></Route>
+      <Route index path="/register2" element={<Register2 />}></Route>
+      <Route path="/inviteuser" element={<InviteUser />}></Route>
+      <Route path="/demo" element={<Demo />}></Route>
+      <Route path="/password" element={<Password />}></Route>
+      <Route path="/regsuccess" element={<RegistrationSuccess />}></Route>
+      <Route path="/demo2" element={<Demo2 />}></Route>
+      <Route path="/login" element={<Login />}></Route>
+      <Route path="/demo3" element={<Demo3 />}></Route>
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedCompany>
+            <Dashboard />
+          </ProtectedCompany>
+        }
+      ></Route>
+      <Route
+        path="/companyregistration"
+        element={
+          <LoginProtected>
+            <CompanyRegistration />
+          </LoginProtected>
+        }
+      ></Route>
+      <Route path="/companyregSuc" element={<CompanyRegSuc />}></Route>
+      <Route path="/companydata" element={<CompanyDataViewer />}></Route>
+      <Route path="/demo4" element={<Demo4 />}></Route>
+      <Route path="*" element={<Error />} /> */}
+    </Route>
+  )
+);
 
 let App:React.FC = () => {
-  const [count, setCount] = useState<number>(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="h-[100vh]">
+      {/* //Router Provider..... */}
+      <RouterProvider router={router} />
+
+    </div>
   )
 }
 
