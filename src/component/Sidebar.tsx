@@ -16,7 +16,6 @@ const Sidebar: React.FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(false);
   const [userData, setUserData] = useState<UserData>({});
   const location = useLocation();
-  const [isCompanyRestored, setIsCompanyRestored] = useState<boolean>(false);
 
   useEffect(() => {
     const islogins = localStorage.getItem("logintoken");
