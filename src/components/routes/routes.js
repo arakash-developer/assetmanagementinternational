@@ -1,7 +1,7 @@
 import Demo7 from "@components/demo/Demo7";
 export const routes = [
   // public routes
-    { path: "/demo7", component: Demo7, access: "public" },
+  { path: "/demo7", component: Demo7, access: "public" },
   //   { path: "/register2", component: Register2, access: "public" },
   //   { path: "/", component: Register, access: "private" },
   //   { path: "/signup", component: Register, access: "public" },
