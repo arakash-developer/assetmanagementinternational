@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const CompanyRegSuc = () => {
   return (
-    <>
+    <div>
       <div className="p-[60px] bg-[#E9E9E9] max-w-[800px]">
         <div className="w-[75px] h-[75px] bg-[var(--primary)] mx-auto mb-10 rounded-full flex justify-center items-center">
           <FaCheck className="text-[#FFF] text-[32px] not-italic font-semibold leading-10" />
@@ -23,7 +23,7 @@ const CompanyRegSuc = () => {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
