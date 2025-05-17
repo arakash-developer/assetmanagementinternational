@@ -12,7 +12,8 @@
       "@assets/*": ["src/assets/*"],
       "@hooks/*": ["src/hooks/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@context/*": ["src/context/*"]
+      "@context/*": ["src/context/*"],
+      "@routes/*": ["src/routes/*"],
     },
     "types": ["node"]
   }

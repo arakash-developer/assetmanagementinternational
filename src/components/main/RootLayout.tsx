@@ -1,29 +1,29 @@
 import Navbar from "@components/main/Navbar";
 import Sidebar from "@components/main/Sidebar";
-import { Contex } from "@context/User";
-import { useContext, useRef } from "react";
+import React, { useRef } from "react";
 import { Outlet } from "react-router-dom";
+// import { Contex } from "@context/User";
 
-const Root = () => {
-  const { assetTerm } = useContext(Contex);
-  const containerRef = useRef(null);
-  const isFirstRender = useRef(true); // Track initial render
+const Root: React.FC = () => {
+  // const { assetTerm } = useContext(Contex);
 
+  // Explicitly type the containerRef to refer to a div
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  // const isFirstRender = useRef<boolean>(true);
+
+  // Optional: Uncomment if you want scroll behavior
   // useEffect(() => {
-  //   // Skip the effect on the initial mount
   //   if (isFirstRender.current) {
   //     isFirstRender.current = false;
   //     return;
   //   }
-
-  //   // Scroll to bottom when assetTerm changes
   //   if (containerRef.current) {
   //     containerRef.current.scrollTo({
   //       top: containerRef.current.scrollHeight,
   //       behavior: "smooth",
   //     });
   //   }
-  // }, [assetTerm]); // ✅ Only run when assetTerm changes
+  // }, [assetTerm]);
 
   return (
     <div className="h-full overflow-hidden">

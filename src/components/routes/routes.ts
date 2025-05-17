@@ -1,5 +1,13 @@
 import Demo7 from "@components/demo/Demo7";
-export const routes = [
+// types/RouteConfig.ts
+import { ComponentType } from "react";
+export interface RouteConfig {
+  path: string;
+  component: ComponentType;
+  access: "private" | "guest" | "public";
+}
+
+export const routes: RouteConfig[] = [
   // public routes
   { path: "/demo7", component: Demo7, access: "public" },
   //   { path: "/register2", component: Register2, access: "public" },
