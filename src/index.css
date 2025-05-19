@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #ed272c;
+  --primary2: #080607;
+  --secondary: #fff;
+  --background: #fbfbfb;
+  --pop-up: #e9e9e9;
+  --gray: #6f7482;
+  --field-color: #f4f5f9;
+  --neutral: #e9ecef;
+  --positive: #12b76a;
+  --label-color: #9e9e9e;
+  --error: #8d6e63;
+  --text-normal: var(--text-normal);
+  --text-secondary: #6c757d;
+  --text-disabled: #adb5bd;
+  --neutral-400: #ced4da;
+  --neutral-100: #f8f9fa;
+  --neutral-200: #e9ecef;
+  --button-disabled: #e9ecef;
+  --gray: #6f7482;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}
+img {
+  max-width: 100%;
+}
+/* tailwind override for autofill */
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: black !important;
+}
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-textfield-decoration-container {
+  display: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.sidebar {
+  background: #fff;
+}
+.sidebar ul li:hover a {
+  background: red !important;
+  color: #fff;
+}
+.sidebar ul li a.active {
+  background: red !important;
+  color: #fff;
+}
+.continue-button {
+  box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.1);
+}
+.formboxshadow {
+  box-shadow: 0px 6px 25px 0px rgba(0, 0, 0, 0.1);
+}
+.loginBox {
+  box-shadow: 0px 6px 25px 0px rgba(219, 220, 222, 0.2);
+  box-shadow: 0px 12px 40px 0px rgba(219, 220, 222, 0.3);
+}
+
+.companyregform {
+  box-shadow: 0px 6px 25px 0px rgba(0, 0, 0, 0.1);
+}
+.servicecard {
+  box-shadow: 0px 6px 25px 0px rgba(219, 220, 222, 0.5);
+}
+
+.custom-checkbox .ant-checkbox-inner {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid var(--neutral-400);
+  transition: all 0.3s ease;
+}
+
+/* akash */
+/* ✅ Checked state stays red */
+.custom-red-checkbox .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: var(--primary2); /* Tailwind red-500 */
+  border-color: var(--primary2);
+}
+
+/* ✅ Focus stays red */
+.custom-red-checkbox .ant-checkbox-input:focus + .ant-checkbox-inner {
+  border-color: var(--primary2);
+}
+
+/* ✅ Red outline around checkmark */
+.custom-red-checkbox .ant-checkbox-checked::after {
+  border: 1px solid var(--primary2);
+}
+
+/* 🚫 Completely disable hover if checkbox is checked */
+.custom-red-checkbox .ant-checkbox-checked:hover .ant-checkbox-inner {
+  background-color: var(--primary2) !important;
+  border-color: var(--primary2) !important;
+  box-shadow: none !important;
+}
+
+/* Optional: Still allow hover effect when **not checked** */
+.custom-red-checkbox:not(.ant-checkbox-checked):hover .ant-checkbox-inner {
+  border-color: var(--primary2); /* Tailwind blue-500 or any hover color */
+}
+
+.dashboard-box {
+  box-shadow: 0 6px 25px 0 rgba(219, 220, 222, 0.2);
+  background: var(--secondary);
+}
+
+/* ✅ Customize the underline (ink bar) color */
+.custom-tabs .ant-tabs-ink-bar {
+  background-color: #ef4444 !important; /* Tailwind red-500 */
+}
+ul.companyProfile li a.active {
+  color: red !important;
+}
+
+/* 🔴 Custom Red Focus */
+.custom-red-input .ant-input:focus,
+.custom-red-input .ant-input-focused {
+  border-color: var(--primary2) !important;
+  box-shadow: none;
+}
+
+/* ❌ Disable Hover Border Change */
+.custom-red-input .ant-input:hover {
+  border-color: var(--primary2) !important; /* neutral gray */
+  box-shadow: none !important;
+}
