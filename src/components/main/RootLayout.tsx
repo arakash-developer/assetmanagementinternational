@@ -1,43 +1,36 @@
-import Navbar from "@components/main/Navbar";
-import Sidebar from "@components/main/Sidebar";
 import { Contex } from "@context/User";
-import { useContext, useRef } from "react";
-import { Outlet } from "react-router-dom";
+import React, { useContext, useEffect, useRef } from "react";
 
-const Root = () => {
+const Root:React.FC= () => {
   const { assetTerm } = useContext(Contex);
-  const containerRef = useRef(null);
-  const isFirstRender = useRef(true); // Track initial render
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const isFirstRender = useRef(true);
 
-  // useEffect(() => {
-  //   // Skip the effect on the initial mount
-  //   if (isFirstRender.current) {
-  //     isFirstRender.current = false;
-  //     return;
-  //   }
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
 
-  //   // Scroll to bottom when assetTerm changes
-  //   if (containerRef.current) {
-  //     containerRef.current.scrollTo({
-  //       top: containerRef.current.scrollHeight,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // }, [assetTerm]); // ✅ Only run when assetTerm changes
+    if (containerRef.current) {
+      containerRef.current.scrollTo({
+        top: containerRef.current.scrollHeight,
+        behavior: "smooth",
+      });
+    }
+  }, [assetTerm]);
 
   return (
     <div className="h-full overflow-hidden bg-[var(--background)]">
       <div className="flex items-start h-full">
-        // <Sidebar />
+        {/* <Sidebar /> */}
         <div className="h-full w-full">
-          // <Navbar />
+          {/* <Navbar /> */}
           <div
             className="overflow-y-scroll h-[90%] bg-[var(--background)]"
             ref={containerRef}
           >
-            <div className="ml-8">
-              // <Outlet />
-            </div>
+            <div className="ml-8">{/* <Outlet /> */}</div>
           </div>
         </div>
       </div>

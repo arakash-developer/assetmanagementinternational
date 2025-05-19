@@ -1,7 +1,7 @@
 import RootLayout from "./components/main/RootLayout";
 // React Router dom........
 import { routes } from "@/routes/routes";
-import { GuestRoute, PrivateRoute, PublicRoute } from "@routes/RouteWrappers";
+import { GuestRoute, PrivateRoute, PublicRoute } from "@/routes/RouteWrappers";
 import {
   createBrowserRouter,
   createRoutesFromElements,
