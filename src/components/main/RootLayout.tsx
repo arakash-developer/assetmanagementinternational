@@ -1,4 +1,4 @@
-import { Contex } from "@context/User";
+import { Contex } from "@/context/User";
 import React, { useContext, useEffect, useRef } from "react";
 
 const Root:React.FC= () => {
